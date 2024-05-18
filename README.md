@@ -1,10 +1,14 @@
 ## DOMWeigher -- CLI tool and a gem to find the heavy DOM nodes
 
+```bash
+gem install domweigher
+```
+
 ```none
-$ bundle exec domweigher
+$ domweigher
 usage:  domweigher [--mult <n>] <file.htm>
 
-$ bundle exec domweigher file.htm
+$ domweigher file.htm
 468629 html
 456568  body.inner-page-winter
 121618   div
@@ -21,5 +25,6 @@ $ bundle exec domweigher file.htm
  51227            div.main-nav-submenu
 ```
 
-Prints nodes until they weigh less than the whole HTML document weight divided by 10 (optional parameter `--mult`).  
-`<svg>` is another hardcoded stop.
+Prints nodes until they weigh less than the whole HTML document weight divided by 10.  
+Divisor is configurabl via optional CLI arg `--mult`.  
+An SVG node is another stop.
