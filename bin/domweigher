@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+mult = Integer((ARGV.shift; ARGV.shift)) if "--mult" == ARGV.first
+abort "usage:\tdomweigher [--mult <n>] <file.htm>" unless 1 == ARGV.size
+abort "the argument should be a file" unless File.exist? ARGV.first
+abort "the argument should be a file" unless File.file? ARGV.first
+require_relative "../lib/domweigher"
+puts DOMWeigher ARGF.read, *mult
